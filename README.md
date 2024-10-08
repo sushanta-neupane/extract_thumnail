@@ -5,34 +5,36 @@ A Node.js package for generating thumbnails from DOCX, PPTX, and PDF files. It e
 ## Installation
 
 ```bash
-npm install Thumbify
+npm install thumbify
 
 import { processFile } from 'Thumbify';
 import fs from 'fs';
 
-// Example 1: Process PDF file
+// Example 1: Process with buffer
 (async () => {
-  const buffer = fs.readFileSync('sample.pdf');
+  const buffer = fs.readFileSync('sample.pdf/.docx/.pptx');
   const options = { returnBuffers: true };
-  const result = await processFile(buffer, options, '.pdf');
+  const result = await processFile(buffer, options, '.pdf | .docx | .pptx');
   console.log('Generated thumbnails:', result);
 })();
 
-// Example 2: Process DOCX file
+// Example 2: Process with local files
 (async () => {
-  const buffer = fs.readFileSync('sample.docx');
+
   const options = { returnBuffers: true };
-  const result = await processFile(buffer, options, '.docx');
+  const result = await processFile('sample.pdf/.docx/.pptx', options, '.pdf | .docx | .pptx');
   console.log('Generated thumbnails:', result);
 })();
 
-// Example 3: Process PPTX file
+
+// Example 3: Process with online files
 (async () => {
-  const buffer = fs.readFileSync('sample.pptx');
+  const buffer = fs.readFileSync('https://you-file-url-here.pdf/.docx/.pptx');
   const options = { returnBuffers: true };
-  const result = await processFile(buffer, options, '.pptx');
+  const result = await processFile(buffer, options, '.pdf | .docx | .pptx');
   console.log('Generated thumbnails:', result);
 })();
+
 
 ```
 
@@ -43,7 +45,7 @@ import fs from 'fs';
 ## File Support
 
     .pdf: Generates a PNG thumbnail from the first page of the PDF.
-    .docx: Converts DOCX to PDF and then generates a PNG thumbnail.
-    .pptx: Extracts the thumbnail or first slide from the presentation.
+    .docx/.doc: Converts DOCX to PDF and then generates a PNG thumbnail.
+    .pptx/.ppt: Extracts the thumbnail or first slide from the presentation.
 
 This setup makes it easier to maintain and package for npm.

@@ -7,9 +7,13 @@
     "dev": "node index.js"
   },
   "type": "module",
-  "author": "",
+  "author": "Sushanta Neupane",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushanta-neupane/thumbify.git"
+  },
   "license": "ISC",
-  "description": "",
+  "description": "Get thumbnail of pptx , pdf and docx",
   "dependencies": {
     "canvas": "^2.11.2",
     "html-to-pdfmake": "^2.5.13",
