@@ -7,7 +7,7 @@ Support : ES6 module
 ## Installation
 
 ```bash
-npm install thumbify
+npm install thumbnailGen
 
 ```
 
@@ -15,7 +15,7 @@ npm install thumbify
 
 ```bash
 
-import { processFile } from 'Thumbify';
+import { processFile } from 'thumbnailGen';
 import fs from 'fs';
 
 // Example 1: Process with buffer
