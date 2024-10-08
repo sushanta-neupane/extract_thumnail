@@ -7,7 +7,7 @@ Support : ES6 module
 ## Installation
 
 ```bash
-npm install thumbnailGen
+npm install extract_thumnail
 
 ```
 
@@ -15,7 +15,7 @@ npm install thumbnailGen
 
 ```bash
 
-import { processFile } from 'thumbnailGen';
+import { processFile } from 'extract_thumnail';
 import fs from 'fs';
 
 // Example 1: Process with buffer

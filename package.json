@@ -1,5 +1,5 @@
 {
-  "name": "thumbnailgen",
+  "name": "extract_thumnail",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,9 @@
   "author": "Sushanta Neupane",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sushanta-neupane/thumbnailGen.git"
+    "url": "git+https://github.com/sushanta-neupane/extract_thumnail.git"
   },
-  "homepage": "https://github.com/sushanta-neupane/thumbnailGen.git#readme",
+  "homepage": "https://github.com/sushanta-neupane/extract_thumnail.git#readme",
   "license": "ISC",
   "description": "Get thumbnail of pptx , pdf and docx",
   "dependencies": {
