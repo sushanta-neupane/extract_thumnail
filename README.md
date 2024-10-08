@@ -2,6 +2,8 @@
 
 A Node.js package for generating thumbnails from DOCX, PPTX, and PDF files. It extracts the first page/slide and generates multiple size variants of the thumbnail.
 
+Support : ES6 module
+
 ## Installation
 
 ```bash
