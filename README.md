@@ -29,9 +29,8 @@ import fs from 'fs';
 
 // Example 3: Process with online files
 (async () => {
-  const buffer = fs.readFileSync('https://you-file-url-here.pdf/.docx/.pptx');
   const options = { returnBuffers: true };
-  const result = await processFile(buffer, options, '.pdf | .docx | .pptx');
+  const result = await processFile('https://you-file-url-here.pdf/.docx/.pptx', options, '.pdf | .docx | .pptx');
   console.log('Generated thumbnails:', result);
 })();
 
