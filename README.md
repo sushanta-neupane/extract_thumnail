@@ -7,6 +7,12 @@ A Node.js package for generating thumbnails from DOCX, PPTX, and PDF files. It e
 ```bash
 npm install thumbify
 
+```
+
+## Usages
+
+```bash
+
 import { processFile } from 'Thumbify';
 import fs from 'fs';
 
@@ -46,5 +52,3 @@ import fs from 'fs';
     .pdf: Generates a PNG thumbnail from the first page of the PDF.
     .docx/.doc: Converts DOCX to PDF and then generates a PNG thumbnail.
     .pptx/.ppt: Extracts the thumbnail or first slide from the presentation.
-
-This setup makes it easier to maintain and package for npm.
