@@ -1,22 +1,27 @@
 {
   "name": "doc2thumb",
   "version": "1.0.1",
+  "description": "Generate thumbnails from PDF, DOCX, and PPTX files",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node index.js"
   },
-  "type": "module",
-  "author": "Sushanta Neupane",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sushanta-neupane/extract_thumnail.git"
+    "url": "git+https://github.com/sushanta-neupane/doc2thumb.git"
   },
-  "homepage": "https://github.com/sushanta-neupane/extract_thumnail.git#readme",
+  "homepage": "https://github.com/sushanta-neupane/doc2thumb#readme",
   "license": "ISC",
-  "description": "Get thumbnail of pptx , pdf and docx",
   "dependencies": {
-    "canvas": "^2.11.2",
     "html-to-pdfmake": "^2.5.13",
     "jsdom": "^25.0.1",
     "jszip": "^3.10.1",

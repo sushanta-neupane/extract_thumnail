@@ -1,60 +1,41 @@
-# File Thumbnail Generator
+# doc2thumb
 
-A Node.js package for generating thumbnails from DOCX, PPTX, and PDF files. It extracts the first page/slide and generates multiple size variants of the thumbnail.
-
-Support : ES6 module
+Generate thumbnails from PDF, DOCX, and PPTX files. Extracts the first page/slide and produces multiple size variants.
 
 ## Installation
 
 ```bash
 npm install doc2thumb
-
 ```
 
-## Usages
+## Usage
 
-```bash
-
+```js
 import { processFile } from 'doc2thumb';
 import fs from 'fs';
 
-// Example 1: Process with buffer
-(async () => {
-  const buffer = fs.readFileSync('sample.pdf/.docx/.pptx');
-  const options = { returnBuffers: true };
-  const result = await processFile(buffer, options, '.pdf | .docx | .pptx');
-  console.log('Generated thumbnails:', result);
-})();
+// Example 1: From buffer
+const buffer = fs.readFileSync('sample.pdf');
+const result = await processFile(buffer, { returnBuffers: true });
+console.log('Thumbnails:', result);
 
-// Example 2: Process with local files
-(async () => {
+// Example 2: From local file
+const result = await processFile('sample.docx', { returnBuffers: true });
+console.log('Thumbnails:', result);
 
-  const options = { returnBuffers: true };
-  const result = await processFile('sample.pdf/.docx/.pptx', options, '.pdf | .docx | .pptx');
-  console.log('Generated thumbnails:', result);
-})();
-
-
-// Example 3: Process with online files
-(async () => {
-  const options = { returnBuffers: true };
-  const result = await processFile('https://you-file-url-here.pdf/.docx/.pptx', options, '.pdf | .docx | .pptx');
-  console.log('Generated thumbnails:', result);
-})();
-
-
+// Example 3: From URL
+const result = await processFile('https://example.com/file.pptx', { returnBuffers: true });
+console.log('Thumbnails:', result);
 ```
 
 ## Options
 
-    returnBuffers: Set this to true if you want the thumbnails returned as buffers instead of file paths.
+| Option | Type | Description |
+|--------|------|-------------|
+| `returnBuffers` | `boolean` | Return thumbnail buffers instead of file paths |
 
-## File Support
+## Supported formats
 
-    .pdf: Generates a PNG thumbnail from the first page of the PDF.
-    .docx/.doc: Converts DOCX to PDF and then generates a PNG thumbnail.
-    .pptx/.ppt: Extracts the thumbnail or first slide from the presentation.
-
-
-## Keywords
-pdf thumbnail generator, docx thumbnail generator, pptx preview, file thumbnail nodejs, document preview node, pdf preview nodejs, pptx thumbnail nodejs, docx preview node
+- **PDF** — Renders first page to PNG via Poppler
+- **DOCX / DOC** — Converts to PDF, then renders first page
+- **PPTX / PPT** — Extracts embedded thumbnail or first slide image
